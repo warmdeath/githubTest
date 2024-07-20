@@ -4,4 +4,3 @@ def main():
 
     print(list(map(function,tbl)))
 main()
-print("Yo Github")
