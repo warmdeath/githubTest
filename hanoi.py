@@ -7,7 +7,7 @@ def user_move(rod1,rod2):
         return
     rod2.append(rod1.pop())
 
-def display(n,rods,char="_",offset = 4):
+def display(n,rods,char="$",offset = 4):
     lines = []
     base = n*2-1
     rod_off = int((base-1)/2)
@@ -29,7 +29,7 @@ def display(n,rods,char="_",offset = 4):
                 disk_size = (disk*2-1)
                 disk_off = int((base-disk_size)/2)
                 lines[i] += disk_off*" "+char*disk_size+(disk_off+offset)*" "
-    string = 50*"\n"+"\n".join(lines)
+    string = "\n"+"\n".join(lines)
     print(string)
 
 def valid(command):
@@ -51,14 +51,20 @@ def game(n,rods):
         command = input("\nWhat's your next move? ")
         if valid(command):
             user_move(rods[command[0]],rods[command[1]])
+            print("\n"*50)
 
 if __name__ == "__main__":
     while True:
         print("\nWelcome to the Terminal Hanoi puzzle game! made by Alex")
         command = input("\nHow many disks would you like to play with? ")
-        if not command.isnumeric:
+        if not command.isnumeric():
             print(f"{command} is not a number!\tPlease try again!")
             continue
+        # char = input("\nWhich character woud you like your disk to be in? ")
+        # if len(char) != 1:
+        #     print(f"{char} is not a valid char!\tPlease try again!")
+        #     continue
+
         n = int(command)
         rods = {
             "A":list(range(n,0,-1)),
