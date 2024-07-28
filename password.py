@@ -1,7 +1,7 @@
 import string
 import re
 import secrets
-def generate(length = 16,nums = 1,special = 1, lowercase = 1,uppercase = 1):
+def generate(length = 8,nums = 3,special = 0, lowercase = 4,uppercase = 1):
     letters = string.ascii_letters
     digits = string.digits
     symbols = string.punctuation
@@ -20,5 +20,6 @@ def generate(length = 16,nums = 1,special = 1, lowercase = 1,uppercase = 1):
             break
     return password
 
-new_password = generate()
-print('Generated password:', new_password)
+# new_password = generate()
+password_list = [generate() for x in range(100)]
+print('Generated passwords:', password_list)
