@@ -1,14 +1,11 @@
-def merge_sort(array):
+def merge_sort(array,original):
     if len(array) <= 1:
         return
-    
     middle_point = len(array) // 2
     left_part = array[:middle_point]
     right_part = array[middle_point:]
-
-    merge_sort(left_part)
-    merge_sort(right_part)
-    print(array)
+    merge_sort(left_part,original)
+    merge_sort(right_part,original)
 
     left_array_index = 0
     right_array_index = 0
@@ -38,6 +35,6 @@ if __name__ == '__main__':
     numbers = [4, 10, 6, 14, 2, 1, 8, 5]
     print('Unsorted array: ')
     print(numbers)
-    merge_sort(numbers)
+    merge_sort(numbers,numbers)
     print("Sorted array: ")
     print(numbers)
