@@ -18,13 +18,13 @@ while run:
             run = False
     keys = pygame.key.get_pressed()
     if keys[pygame.K_LEFT]:
-        x -= 10
+        x -= 1
     if keys[pygame.K_RIGHT]:
-        x += 10
+        x += 1
     if keys[pygame.K_UP]:
-        y -= 10
+        y -= 1
     if keys[pygame.K_DOWN]:
-        y += 10
+        y += 1
         
     win.fill((0,0,0))
     pygame.draw.rect(win, (255,0,0), (x,y,w,h))
