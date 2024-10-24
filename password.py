@@ -21,5 +21,5 @@ def generate(length = 8,nums = 3,special = 0, lowercase = 4,uppercase = 1):
     return password
 
 # new_password = generate()
-password_list = [generate() for x in range(100)]
+password_list = [generate() for x in range(10)]
 print('Generated passwords:', password_list)
